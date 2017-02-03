@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'app.php';
+
+$r = $GLOBALS["config"]["run"];
+
+echo "Listening on http://" . $r[server] . ":" . $r[port];
+
+echo "\nPress Ctrl-C to quit.\n\n";
+
+exec("php -sS " . $r[server] . ":" . $r[port]);

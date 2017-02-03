@@ -1,0 +1,28 @@
+
+framwork:
+    locale: en
+    name: AJ-1.0
+    dev: true
+    
+default:
+    controller : home
+    action : index
+
+templating:
+    engines: twig
+    view_path : src/view
+    public : src/view/public
+
+database:
+    dbname: 'AJ'
+    user: 'root'
+    password: 'sdfpro'
+    host: '127.0.0.1'
+    driver: 'pdo_mysql'
+    charset: 'utf8'
+    driverOptions:
+        1002: 'SET NAMES utf8'
+
+run:
+    server : 0.0.0.0
+    port : 8080

@@ -1,0 +1,27 @@
+{
+    "name": "JA",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": ["src/controller/","src/model/"],
+            "AJ\\Core\\": ["vendor/AJ/core"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "test/"
+        }
+    },
+    "require": {
+        "doctrine/orm": "*",
+        "monolog/monolog" : "*",
+        "twig/twig" : "*"
+    },
+    "extra": {
+        "app-dir": "app",
+        "var-dir": "var",
+        "test-dir": "test",
+        "assets-dir": "src/view/public"
+    }
+}
