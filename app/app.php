@@ -39,7 +39,7 @@ $template = new Twig_Environment($load);
 
 $classLoader = new \Doctrine\Common\ClassLoader('Doctrine');
 $classLoader->register();
-$classLoader = new \Doctrine\Common\ClassLoader('Entities', $entitypath[0]);
+$classLoader = new \Doctrine\Common\ClassLoader('Entity', $entitypath[0]);
 $classLoader->register();
 
 $ormconfig = new \Doctrine\ORM\Configuration();

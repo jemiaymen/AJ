@@ -1,5 +1,5 @@
 <?php
-namespace Entities;
+namespace Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use AJ\Core\Model;
@@ -38,12 +38,12 @@ class User extends Model{
         return $this->pw;
     }
 
-    public function __construct($login,$pw){
+    public function __construct($login = NULL,$pw = NULL){
         $this->login = $login;
         $this->pw = $pw;
     }
 
     public function getUser($id){
-       return $GLOBALS["em"]->find('User',$id);
+       return $GLOBALS["em"]->find('Entity\User',$id);
     }
 }

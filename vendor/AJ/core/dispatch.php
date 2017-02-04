@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace AJ\Core;
 
 require_once "router.php";
@@ -13,11 +15,20 @@ class Dispatch {
 
     public function handler(){
         if($this->router->getMethod() =="GET"){
-            $this->run();
+            try {
+                $this->run();
+            }catch(\TypeError $e){
+                echo "Action Params Error !";
+            }
+            
         }elseif($this->router->getMethod() =="POST"){
-            $this->run($this->router->getReq());
+            try {
+                $this->run($this->router->getReq());
+            }catch(\TypeError $e ){
+                echo "Action Params Error !";
+            }
         }else{
-            echo "HttpMethod Not Allowed !";
+            echo "Http Method Not Allowed !";
         }
     }
 
@@ -46,7 +57,8 @@ class Dispatch {
             }  
         }else{
             echo "Error Controller Not Found !";
-        }    
+        } 
+          
     }
 
 }

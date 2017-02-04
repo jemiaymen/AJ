@@ -7,6 +7,12 @@ framwork:
 default:
     controller : home
     action : index
+    404 :
+        controller : home
+        action : index
+    500 :
+        controller : home
+        action : index
 
 templating:
     engines: twig
@@ -26,3 +32,31 @@ database:
 run:
     server : 0.0.0.0
     port : 8080
+
+auth:
+    cookie:
+        name : authaj
+        secure : false
+        domain : localhost
+        expire : 3600
+        path : /
+        httponly : true
+
+    acl:
+        db : user
+        additional :
+            adress : 
+                type : string
+                tail : 200
+                nullable : false
+                index : false
+            age : 
+                type : int
+                tail : 3
+                nullable : false
+                index : false
+                
+        roles : admin ; superadmin ; sample
+
+
+    
