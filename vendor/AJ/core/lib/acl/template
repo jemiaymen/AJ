@@ -1,0 +1,9 @@
+create table if not exists user(
+    id int auto_increment,
+    username varchar(200) not null,
+    password varchar(200) not null,
+    token varchar(200) not null,
+    lastauth datetime ,
+    primary key(id),
+    unique(username),
+    unique(token)

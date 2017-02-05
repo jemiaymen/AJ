@@ -3,7 +3,7 @@
 use AJ\Core\Controller ;
 use Entity\User;
 
-use AJ\Core\Lib\Acl\Acl;
+use AJ\Core\Lib\Acl\Cli ;
 
 class HomeController extends Controller{
 
@@ -30,9 +30,9 @@ class HomeController extends Controller{
 
     public function home(){
         $this->loader->library("acl");
-        $a = new Acl;
-
-        return "";
+        $c = new Cli;
+        $c->run();
+        return "Sahite ";
     }
     
 }

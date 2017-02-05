@@ -43,10 +43,10 @@ auth:
         httponly : true
 
     acl:
-        db : user
+        db : auth
         additional :
             adress : 
-                type : string
+                type : varchar
                 tail : 200
                 nullable : false
                 index : false

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+app/cli orm:convert-mapping annotation src/model --force --from-database --namespace="Entity\\" --extend="AJ\\Core\\Model"
+app/cli orm:generate:entities src/model --no-backup
